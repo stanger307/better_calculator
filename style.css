@@ -1,0 +1,105 @@
+:root {
+    --silver: #ccc;
+    --gray: #aaa;
+    --black: #111;
+    --calc: #333;
+    --orange: rgba(245, 85, 11, 0.842);
+    --blue: rgba(29, 72, 212, 0.637);
+    --vio: rgba(255, 123, 0, 0.582);
+    --dio: rgba(62, 68, 71, 0.788);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.calc-btn {
+    background: var(--gray);
+    color: var(--black);
+    width: 25px;
+    height: 45px;
+    border: 1px solid var(--calc);
+    text-align: center;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 100;
+    padding-top: 3px;
+}
+
+.calc-btn:hover {
+    background-color: var(--dio);
+}
+
+.row {
+    display: table;
+    table-layout: fixed;
+    width: 200px;
+}
+
+.col {
+    display: table-cell;
+}
+
+#calc-zero {
+    width: 50px;
+    border-radius: 0 0 0 7px;
+}
+
+#calc-clear {
+    width: 50px;
+}
+
+#op-display {
+    padding: 12px;
+    border-radius: 7px 7px 0 0;
+}
+
+#calc-display2 {
+    position: relative;
+    text-align: right;
+    width: 44px;
+    overflow: hidden;
+}
+.display {
+    width: 100%;
+    overflow: hidden;
+}
+#calc-display {
+    color: white;
+    text-align: right;
+    border-left: 1px solid var(--calc);
+    border-right: 1px solid var(--calc);
+    border-top: 1px solid var(--calc);
+    font-size: 22px;
+    background: var(--calc);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 22px 12px;
+    border-radius: 7px 7px 0 0;
+}
+
+.calc-btn-op {
+    background: var(--orange);
+    color: white;
+}
+
+.calc-btn-op:hover {
+    background: var(--vio);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#calc-eq {
+    border-radius: 0 0 7px 0;
+}
+
+#calc {
+    margin-left: calc(50% - 100px);
+}
