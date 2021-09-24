@@ -1,9 +1,11 @@
-
+const body = document.querySelector("body");
 const clearBtn = document.getElementById("calc-clear");
 const allNumbers= document.getElementsByClassName("calc-btn-num");
 const symbols = document.getElementsByClassName("calc-btn-op");
 const eqBtn = document.getElementById("calc-eq");
 const backspace = document.getElementById("calc-backspace");
+
+const allButs = document.getElementsByClassName(".calc-btn");
 
 const display = document.getElementById("calc-display");
 const display2 = document.getElementById("op-display");
@@ -15,6 +17,26 @@ let outputOne = '';
 let outputTwo = '';
 let dot = false;
 
+//audio
+var click = new Audio();
+var alertz = new Audio();
+alertz.src = "./fx/alert.wv";    
+click.src = "./fx/click.wav";
+
+
+function playSound(sound){
+
+    if(sound) {  
+        sound.currentTime = 0;       
+        sound.play();                
+    }
+}
+
+
+
+Array.from(allButs).forEach(btn => {
+    btn.addEventListener('click', playSound(click));
+})
 
 Array.from(allNumbers).forEach(num => {
     num.addEventListener('click', displayNumber);
@@ -29,6 +51,7 @@ function displayNumber(e) {
     outputTwo += e.target.innerText;
     display3.innerText = outputTwo;
     if (outputTwo.length > 10) {
+        playSound(alertz);
         alert("wow!");
         outputTwo = '';
     };
@@ -108,3 +131,23 @@ function deleteMemory() {
     display2.innerText = '';
     outputOne = '';
 }
+
+
+// visual
+
+
+const changeBackground = function() {
+    body.style.backgroundColor = getColor();
+    // display2.style.color = getColor();
+    // display3.style.color = getColor();
+}
+
+function getColor() {
+    let color = ["#"];
+    for (let i = 0; i < 3; i++){
+        color.push(Math.floor(Math.random() * 10));
+    }
+    return color.join("");
+}
+
+window.addEventListener("click", () => changeBackground(),);

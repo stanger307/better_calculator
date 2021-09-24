@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&family=Tourney:wght@500;800&display=swap');
+
 :root {
     --silver: #ccc;
     --gray: #aaa;
     --black: #111;
-    --calc: #333;
+    --calc: #333333a6;
     --orange: rgba(245, 85, 11, 0.842);
     --blue: rgba(29, 72, 212, 0.637);
-    --vio: rgba(255, 123, 0, 0.582);
+    --vio: rgb(255 123 0 / 38%);
     --dio: rgba(62, 68, 71, 0.788);
 }
 
@@ -14,6 +16,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Slab', serif;
 }
 
 .calc-btn {
@@ -83,11 +86,15 @@
 
 .calc-btn-op {
     background: var(--orange);
-    color: white;
+    /* color: white; */
 }
 
 .calc-btn-op:hover {
     background: var(--vio);
+}
+
+.sec {
+    color: white;
 }
 
 h1 {
